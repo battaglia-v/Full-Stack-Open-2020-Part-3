@@ -11,7 +11,6 @@ const url = `mongodb+srv://fullstack:${password}@cluster0-ilqup.mongodb.net/phon
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
-
 const personSchema = new mongoose.Schema({
     name: String,
     number: String,
@@ -23,7 +22,6 @@ if (process.argv.length === 3) {
 
     console.log(`phonebook:`)
     return (
-        
         Person
             .find({})
             .then(persons => {
@@ -43,8 +41,6 @@ const person = new Person({
     number: personNumber,
 
     })
-
-
 
 
     person.save().then(result => {
