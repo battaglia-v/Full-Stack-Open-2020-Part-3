@@ -30,8 +30,6 @@ const personSchema = new mongoose.Schema({
   },
 });
 
-const opts = { runValidators: true };
-
 personSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = returnedObject._id.toString()
