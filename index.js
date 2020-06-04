@@ -94,7 +94,7 @@ app.put('/api/persons/:id', (request, response, next) => {
     number: request.body.number,
   }
   const opts = { runValidators: true}
-  
+
   Person.findByIdAndUpdate(id, person, opts, { new:true })
     .then(updatedPerson => {
       if (updatedPerson) {
@@ -149,7 +149,6 @@ const errorHandler = (error, request, response, next) => {
 app.use(errorHandler)
 
 const PORT = process.env.PORT
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
